@@ -1,0 +1,24 @@
+{
+  "name": "auc-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "ac": "index.js",
+    "au-cli": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "刘誉",
+    "email": "974257574@qq.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "enquirer": "^2.3.6",
+    "kolorist": "^1.5.0",
+    "minimist": "^1.2.5"
+  }
+}
