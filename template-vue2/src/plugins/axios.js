@@ -1,9 +1,8 @@
 import axios from 'axios'
 import qs from 'qs'
-import _sign from '../utils/_sign'
 
 const request = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL,
+  baseURL: process.env.NODE_ENV === 'development' ? '/api' : 'http://192.168.1.1:3000/api/',
   timeout: 10000,
   transformRequest: [function (data) {
     const d = qs.stringify(data)

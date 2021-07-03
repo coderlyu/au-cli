@@ -24,7 +24,7 @@ const cwd = process.cwd()
 
 const TEMPLATES = [
   // yellow('vue3'),
-  // green('vue2'),
+  green('vue2'),
   green('vue-vite'),
   cyan('vue-vite-ts'),
   // cyan('vue3-ts'),
