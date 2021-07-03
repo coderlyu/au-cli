@@ -2,12 +2,14 @@
   <div>{{ message }}</div>
 </template>
 <script>
-export default {
+import { defineComponent, ref } from 'vue'
+export default defineComponent({
   name: 'Home',
-  data() {
+  setup() {
+    const message = ref('this is home page')
     return {
-      message: 'this is home page'
+      message
     }
   }
-}
+})
 </script>

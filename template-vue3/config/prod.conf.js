@@ -22,7 +22,7 @@ const prodConf = {
   ],
   resolve: {
     alias: {
-      vue$: 'vue/dist/vue.runtime.js'
+      // vue$: 'vue/dist/vue.runtime.js'
     }
   },
   optimization: {

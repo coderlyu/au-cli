@@ -1,21 +1,34 @@
-import VueRouter from "vue-router"
-import Vue from 'vue'
-
-Vue.use(VueRouter)
+import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
     path: '/home',
-    name: 'Home',
-    component: () => import('views/Home.vue')
+    name: 'home',
+    component: () => import('views/Home.vue'),
+    meta: {
+      title: 'Home',
+    },
   },
   {
     path: '/about',
-    name: 'About',
-    component: () => import('views/About.vue')
-  },
+    name: 'about',
+    component: () => import('views/About.vue'),
+    meta: {
+      title: 'About',
+    },
+  }
 ]
 
-export default new VueRouter({
-  routes
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+  scrollBehavior (to, from, savedPosition) {
+    return {
+      el: '#app',
+      top: 0,
+      behavior: 'smooth',
+    }
+  },
 })
+
+export default router

@@ -9,14 +9,16 @@
   </div>
 </template>
 <script>
-export default {
+import { defineComponent, ref } from 'vue'
+export default defineComponent({
   name: 'App',
-  data() {
+  setup() {
+    const message = ref('this is app')
     return {
-      message: 'this is app'
+      message
     }
   }
-}
+})
 </script>
 <style>
 .root {
