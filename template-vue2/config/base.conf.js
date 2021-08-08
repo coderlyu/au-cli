@@ -41,7 +41,10 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        options: {
+          cacheDirectory: true,
+        }
       },
       {
         test: /\.(jpg|png|gif|jpeg)$/,

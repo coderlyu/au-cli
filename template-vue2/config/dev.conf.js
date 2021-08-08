@@ -9,18 +9,6 @@ const devConf = {
   output: {
     publicPath: '/',
   },
-  devServer: {
-    proxy: {
-      '/api': 'http://localhost:3000'
-    },
-    port: 3000,
-    contentBase: path.resolve(__dirname, '../public'),
-    compress: true,
-    historyApiFallback: true,
-    hot: true,
-    https: false,
-    noInfo: false,
-  },
   resolve: {
     alias: {
       vue$: 'vue/dist/vue.esm.js'

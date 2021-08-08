@@ -11,6 +11,9 @@ const cwd = process.cwd()
 
 const prodConf = {
   mode:'production',
+  output: {
+    publicPath: './',
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new webpack.ProgressPlugin(function(rate, t, ...msg) {
