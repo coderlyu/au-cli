@@ -1,11 +1,13 @@
 const path = require('path')
+const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const baseConf = require('./base.conf')
-
+baseConf.entry.unshift('')
 const cwd = process.cwd()
 
 const devConf = {
   mode: 'development',
+  target: 'web',
   output: {
     publicPath: '/',
   },
@@ -22,7 +24,10 @@ const devConf = {
     noInfo: false,
   },
   resolve: {
-  }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 }
 
 module.exports = merge(baseConf, devConf)

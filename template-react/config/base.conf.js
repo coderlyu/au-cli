@@ -1,6 +1,5 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { VueLoaderPlugin } = require('vue-loader')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const MiniCssExtractPlugin  = require('mini-css-extract-plugin')
 const webpack = require('webpack')
@@ -19,25 +18,15 @@ const commonCss = isProd ? [
 ] : ['style-loader', 'css-loader']
 
 module.exports = {
-  entry: path.resolve(__dirname, '../src/index.js'),
+  entry: [
+    path.resolve(__dirname, '../src/index.jsx')
+  ],
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'static/js/[name].js'
   },
   module: {
     rules: [
-      {
-        test: /\.(vue)$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            css: ExtractTextPlugin.extract({
-              use: 'css-loader',
-              fallback: 'vue-style-loader'
-            })
-          }
-        }
-      },
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
@@ -82,7 +71,7 @@ module.exports = {
       '@': path.resolve(__dirname, '../src'),
       'views': path.resolve(__dirname, '../src/views'),
     },
-    extensions: ['.js', '.vue', '.json', '.jsx', '.css'],
+    extensions: ['.jsx', '.js', '.json', '.css'],
     // fallback: {
     //   process: require.resolve('process/browser')
     // }
@@ -93,9 +82,8 @@ module.exports = {
       template: path.resolve(__dirname, '../public/index.html'),
       minify: isProd,
       inject: true,
-      title: 'vue2 App'
+      title: 'react App'
     }),
-    new VueLoaderPlugin(),
     // new webpack.ProvidePlugin({
     //   process: 'process'
     // }),
